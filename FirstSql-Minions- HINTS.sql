@@ -42,6 +42,16 @@ CREATE TABLE [Towns] (
 	[Name] NVARCHAR (70) NOT NULL
 )
 
+
+-- ALTER TABLE [Minions]: This part specifies the table that you want to modify. In this case, it's the "Minions" table.
+--ADD [TownId] INT: This part adds a new column named "TownId" to the "Minions" table. The data type of this column is INT, meaning it will store integer values.
+--FOREIGN KEY REFERENCES [Towns] ([Id]): This part specifies that the "TownId" column will be a foreign key that references the "Id" column in the "Towns" table. 
+	--This establishes a relationship between the "Minions" table and the "Towns" table, where each value in the "TownId" column of the "Minions" table must correspond to a value in the "Id" column of the "Towns" table.
+--NOT NULL: This part specifies that the "TownId" column cannot contain null values. 
+	--It ensures that every row in the "Minions" table must have a valid value for the "TownId" column, which corresponds to an existing town in the "Towns" table.
+-- So, overall, this statement modifies the "Minions" table by adding a new column "TownId", which serves as a foreign key referencing the "Id" column in the "Towns" table. 
+	--This establishes a relationship between the two tables, ensuring referential integrity, and specifies that the "TownId" column cannot contain null values.
+
 ALTER TABLE [Minions]
 ADD [TownId] INT FOREIGN KEY REFERENCES [Towns] ([Id]) NOT NULL
 
