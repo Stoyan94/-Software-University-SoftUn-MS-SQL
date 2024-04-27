@@ -56,6 +56,9 @@ ALTER TABLE [Minions]
 ADD [TownId] INT FOREIGN KEY REFERENCES [Towns] ([Id]) NOT NULL
 
 
+--This statement alters the "Minions" table by modifying the data type of the "Age" column to INT. 
+	--Without the NOT NULL constraint, the column is now allowed to contain NULL values
+	
 ALTER TABLE [Minions]
 ALTER COLUMN [Age] INT
 
