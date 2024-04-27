@@ -1,1 +1,1 @@
-# -Software-University-SoftUn-MS-SQL
+# -Software-University-SoftUni-MS-SQL
