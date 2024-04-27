@@ -64,6 +64,18 @@ ALTER COLUMN [Age] INT
 
 GO
 
+
+--To understand why you need to fill the [Towns] table before the [Minions] table, let's consider the data model and the concept of foreign key constraints.
+
+--In your example, the [Minions] table has a column [TownId] that serves as a foreign key referencing the [Id] column in the [Towns] table. 
+	--This means that every value in the [TownId] column of the [Minions] table must correspond to a valid Id in the [Towns] table. 
+	--If you try to insert a row into [Minions] with a [TownId] that doesn't exist in the [Towns] table, you'll encounter a foreign key constraint violation error.
+
+--Given this constraint, you need to ensure that the [Towns] table is populated with the necessary data (in this case, town names and their corresponding IDs) before inserting any rows into the [Minions] table. 
+	--Otherwise, you might attempt to insert a [TownId] in the [Minions] table that doesn't exist in the [Towns] table, leading to a constraint violation.
+	
+--So, by inserting data into [Towns] first, you establish the necessary reference points for the foreign key constraints in the [Minions] table, ensuring data integrity and preventing constraint violations during insertion into [Minions].
+	
 INSERT INTO [Towns] ([Id], [Name])
 	VALUES
 (1, 'Sofia'),
