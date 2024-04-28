@@ -27,11 +27,16 @@ CREATE TABLE [Minions] (
 -- CREATE TABLE [Minions]: This line initiates the creation of a new table with the name "Minions". The [Minions] part is enclosed in brackets, 
 -- which means it's considered as a single identifier even if it contains special characters or matches SQL keywords.
 
--- ([Id] INT PRIMARY KEY, [Name] NVARCHAR (50) NOT NULL, [Age] INT NOT NULL): This part defines the structure of the table. It consists of three columns:
+-- ([Id] INT PRIMARY KEY, 
+--[Name] NVARCHAR (50) NOT NULL, 
+--[Age] INT NOT NULL): This part defines the structure of the table. It consists of three columns:
+
 -- [Id] INT PRIMARY KEY: This defines a column named "Id" with the data type INT, which means it stores integer values. 
 -- The PRIMARY KEY constraint specifies that this column is the primary key for the table, which means its values must be unique and not null.
+
 --[Name] NVARCHAR (50) NOT NULL: This defines a column named "Name" with the data type NVARCHAR(50), 
 -- which means it can store variable-length character data of up to 50 characters. 
+
 -- [Age] INT NOT NULL: This defines a column named "Age" with the data type INT, which means it stores integer values. 
 --The NOT NULL constraint specifies that this column cannot contain null values.
 
@@ -45,15 +50,22 @@ CREATE TABLE [Towns] (
 
 -- ALTER TABLE [Minions]: This part specifies the table that you want to modify. In this case, it's the "Minions" table.
 --ADD [TownId] INT: This part adds a new column named "TownId" to the "Minions" table. The data type of this column is INT, meaning it will store integer values.
---FOREIGN KEY REFERENCES [Towns] ([Id]): This part specifies that the "TownId" column will be a foreign key that references the "Id" column in the "Towns" table. 
-	--This establishes a relationship between the "Minions" table and the "Towns" table, where each value in the "TownId" column of the "Minions" table must correspond to a value in the "Id" column of the "Towns" table.
---NOT NULL: This part specifies that the "TownId" column cannot contain null values. 
-	--It ensures that every row in the "Minions" table must have a valid value for the "TownId" column, which corresponds to an existing town in the "Towns" table.
--- So, overall, this statement modifies the "Minions" table by adding a new column "TownId", which serves as a foreign key referencing the "Id" column in the "Towns" table. 
-	--This establishes a relationship between the two tables, ensuring referential integrity, and specifies that the "TownId" column cannot contain null values.
 
+--FOREIGN KEY REFERENCES [Towns] ([Id]): This part specifies that the "TownId" column will be a foreign key that references the "Id" column in the "Towns" table. 
+	--This establishes a relationship between the "Minions" table and the "Towns" table, 
+	--where each value in the "TownId" column of the "Minions" table must correspond to a value in the "Id" column of the "Towns" table.
+
+--NOT NULL: This part specifies that the "TownId" column cannot contain null values. 
+	--It ensures that every row in the "Minions" table must have a valid value for the "TownId" column, 
+	--which corresponds to an existing town in the "Towns" table.
+
+-- So, overall, this statement modifies the "Minions" table by adding a new column "TownId", which serves as a foreign key referencing the "Id" column in the "Towns" table. 
+	--This establishes a relationship between the two tables, ensuring referential integrity, 
+	--and specifies that the "TownId" column cannot contain null values.
+	
 ALTER TABLE [Minions]
 ADD [TownId] INT FOREIGN KEY REFERENCES [Towns] ([Id]) NOT NULL
+
 
 
 --This statement alters the "Minions" table by modifying the data type of the "Age" column to INT. 
