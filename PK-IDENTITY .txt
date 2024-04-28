@@ -1,1 +1,0 @@
-IDENTITY indicates that the values for this column will be automatically generated in an incremental manner.

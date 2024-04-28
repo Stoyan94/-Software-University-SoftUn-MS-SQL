@@ -1,5 +1,0 @@
-In SQL Server, if you have a string with a length of 70 characters and you store it in an NVARCHAR(50) column, the string will be truncated to fit the specified length of the column. SQL Server won't automatically increase the column length to accommodate longer strings.
-
-Likewise, if you have a string with a length of 30 characters and you store it in an NVARCHAR(50) column, the string will be stored as-is without any additional padding to reach the specified length. The column will still have the capacity to store strings up to 50 characters in length, but the actual length of the stored string will remain 30 characters.
-
-It's important to note that NVARCHAR is a variable-length data type, meaning it stores only the actual length of the data plus two bytes to store the length. So, in both cases, the actual storage space used in the database will be determined by the length of the data stored in each row, not by the maximum capacity specified for the column.
