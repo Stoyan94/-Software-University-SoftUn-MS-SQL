@@ -1,0 +1,31 @@
+CREATE TABLE [Directors](
+	[Id] INT PRIMARY KEY IDENTITY NOT NULL,
+	[DirectorName] VARCHAR(255),
+	[Notes] VARCHAR(MAX),
+)
+
+
+CREATE TABLE [Genres](
+	[Id] INT PRIMARY KEY IDENTITY NOT NULL,
+	[GenreName] VARCHAR(255),
+	[Notes] VARCHAR(MAX)
+)
+
+
+CREATE TABLE [Categories](
+	[Id] INT PRIMARY KEY IDENTITY NOT NULL,
+	[CategoryName] VARCHAR(255),
+	[Notes] VARCHAR(MAX)
+)
+
+CREATE TABLE [Movies](
+	[Id] INT IDENTITY NOT NULL,
+	[Title] VARCHAR(50),
+	[DirectorId] INT FOREIGN KEY REFERENCES [Directors](Id),
+	[CopyRightYear] SMALLINT,
+	[Length] FLOAT,
+	[GenreId] INT FOREIGN KEY REFERENCES [Genres](Id),
+	[CategoryId] INT FOREIGN KEY REFERENCES [Categories](Id),
+	[Rating] DECIMAL(3,1),
+	[Notes] VARCHAR(MAX)
+)
