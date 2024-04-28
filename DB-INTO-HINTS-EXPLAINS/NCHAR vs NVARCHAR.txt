@@ -1,0 +1,9 @@
+NCHAR: NCHAR is a fixed-length Unicode character data type. When you define a column as NCHAR, you specify a fixed length for the data it can store. 
+For example, NCHAR(10) would define a column that can store up to 10 Unicode characters. The storage size for NCHAR is twice the number of characters specified, because Unicode characters require two bytes of storage per character. 
+NCHAR is useful when you know the exact length of the data to be stored and want consistent storage for each value.
+
+NVARCHAR: NVARCHAR is a variable-length Unicode character data type. When you define a column as NVARCHAR, you don't specify a fixed length. Instead, it can store variable-length strings of Unicode characters. 
+For example, NVARCHAR(50) would define a column that can store Unicode strings of up to 50 characters in length, but the actual storage used depends on the length of the data stored in each row. The storage size for NVARCHAR varies based on the actual length of the data stored in each row. 
+
+It requires two bytes of storage per character, plus two additional bytes to store the length of the data. NVARCHAR is useful when you need flexibility in the length of the data stored in a column, as it only uses storage space for the actual data length. 
+In summary, NCHAR is fixed-length Unicode character data, while NVARCHAR is variable-length Unicode character data. The choice between them depends on whether you need fixed-length storage or variable-length storage for your character data.
