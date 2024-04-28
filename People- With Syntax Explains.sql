@@ -1,5 +1,8 @@
 USE [Minions]
 
+--The PRIMARY KEY constraint specifies that this column is the primary key for the table, which means its values must be unique for each row. 
+--IDENTITY indicates that the values for this column will be automatically generated in an incremental manner.
+
 CREATE TABLE [People](
 	[Id] INT PRIMARY KEY IDENTITY,
 	[Name] NVARCHAR(200) NOT NULL,
