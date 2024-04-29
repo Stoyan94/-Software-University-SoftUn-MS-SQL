@@ -31,8 +31,6 @@ CREATE TABLE [Employees](
 	[Notes] VARCHAR(MAX)
 )
 
-
-
 CREATE TABLE [Customers](
 	[Id] INT PRIMARY KEY IDENTITY,
 	[DriverLicenceNumber] VARCHAR(50) NOT NULL,
@@ -42,6 +40,8 @@ CREATE TABLE [Customers](
 	[ZIPCode] VARCHAR(20) NOT NULL,
 	[Notes] VARCHAR(MAX)
 )
+
+
 
 CREATE TABLE [RentalOrders](
 	[Id] INT PRIMARY KEY IDENTITY,
@@ -73,3 +73,17 @@ INSERT INTO [Cars]([PlateNumber], [Manufacturer], [Model], [CarYear], [CategoryI
 	('S 4532 BB', 'Opel', 'Vectra', 1991, 1, '4', 'Broken' , 0),
 	('A 5532 SB', 'Honda', 'Civic', 1994, 2, '2', 'Good' , 1),
 	('Q 8756 LG', 'Nisan', 'Godzila', 1997, 3, '4', 'Excelent' , 1)
+
+
+INSERT INTO [Employees]([FirstName], [LastName], [Title], [Notes])
+	VALUES
+	('Maria', 'Ivanova', 'associate', NULL),
+	('Georgi', 'Paskov', 'associate', 'lazy'),
+	('Daniel', 'Gurov', 'associate', NULL)
+
+
+INSERT INTO [Customers]([DriverLicenceNumber], [FullName], [Address], [City], [ZIPCode], [Notes])
+	VALUES
+	('1858415874', 'Poli Poliv Polinov', 'jk.Lazur.bl.33', 'Burgas', '8300', NULL),
+	('1858411479', 'Petur Goshov Marinov', 'jk.Lulin.bl.111', 'Sofia', '1120', 'Pays good'),
+	('1851147648', 'Dimitur Popov Sirov', 'jk.Oborishte.bl.12', 'Grudovo', '8000', NULL)
