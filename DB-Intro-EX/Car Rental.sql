@@ -87,3 +87,11 @@ INSERT INTO [Customers]([DriverLicenceNumber], [FullName], [Address], [City], [Z
 	('1858415874', 'Poli Poliv Polinov', 'jk.Lazur.bl.33', 'Burgas', '8300', NULL),
 	('1858411479', 'Petur Goshov Marinov', 'jk.Lulin.bl.111', 'Sofia', '1120', 'Pays good'),
 	('1851147648', 'Dimitur Popov Sirov', 'jk.Oborishte.bl.12', 'Grudovo', '8000', NULL)
+
+
+INSERT INTO [RentalOrders]([EmployeeId], [CustomerId], [CarId], [TankLevel], [KilometrageStart], [KilometrageEnd], [TotalKilometrage], 
+			[StartDate], [EndDate], [TotalDays], [RateApplied], [TaxRate], [OrderStatus], [Notes])
+	VALUES
+	(1, 3, 2, 18.40, 2000, 3000, 2000 - 3000, '06/15/2021', ' 06/19/2021', 4, 1.47, 9.00, 1, NULL),
+	(1, 3, 2, 18.40, 2000, 3000, 2000 - 3000, '06/15/2021', ' 06/19/2021', 4, 1.47, 9.00, 1, NULL),
+	(1, 3, 2, 18.40, 2000, 3000, 2000 - 3000, '06/15/2021', ' 06/19/2021', 4, 1.47, 9.00, 1, NULL)
