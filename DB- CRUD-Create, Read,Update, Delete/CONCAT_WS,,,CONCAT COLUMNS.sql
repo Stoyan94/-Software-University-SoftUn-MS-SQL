@@ -5,9 +5,7 @@
 
 --The AS FullName part aliases the result of this concatenation as FullName, making it more readable in the result set.
 
-SELECT CONCAT_WS(' ',FirstName, MiddleName, LastName)
-FirstName, 
-LastName, 
+SELECT CONCAT_WS(' ',FirstName, MiddleName, LastName),
 Salary, 
 d.[Name]
 FROM Employees AS e JOIN Departments d ON e.DepartmentID = d.DepartmentID
