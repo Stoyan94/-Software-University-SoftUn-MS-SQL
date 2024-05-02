@@ -15,6 +15,8 @@ WHERE EmployeeID = 1
 
 --In summary, this UPDATE statement increases the Salary by 10% and adds the prefix 'Senior' to the JobTitle for employees in department 3 in the [Employees] table.
 
+--NEVER FORGET CLAUSE 'WHERE'  
+
 UPDATE [Employees]
 SET Salary = Salary *1.10,
 	JobTitle = 'Senior ' + JobTitle
