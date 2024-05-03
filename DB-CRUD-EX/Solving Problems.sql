@@ -68,3 +68,46 @@ SELECT CONCAT_WS(' ', [FirstName], [MiddleName], [LastName])
 AS [Full Name]
 FROM [Employees]
 WHERE [Salary] IN (25000, 14000, 12500, 23600)
+
+
+
+--11.Find All Employees Without a Manager
+--Create a SQL query that finds the first and last names of those employees who do not have a manager.
+SELECT 
+	[FirstName]
+	,[LastName]
+FROM [Employees]
+WHERE ManagerID IS NULL
+
+
+
+--12.Find All Employees with a Salary More Than 50000
+--Create a SQL query that finds the first name, last name and salary 
+	--for employees with a salary higher than 50000. Order the result in decreasing order by salary.
+SELECT 
+	[FirstName]
+   ,[LastName]
+   ,[Salary]
+FROM [Employees]
+WHERE [Salary] > 50000
+ORDER BY [Salary] DESC 
+
+
+
+--13.Find 5 Best Paid Employees.
+--Create a SQL query that finds the first and last names of the 5 best-paid Employees, ordered descending by their salary.
+SELECT TOP 5
+	[FirstName]
+   ,[LastName]   
+FROM [Employees]
+ORDER BY [Salary] DESC
+
+
+
+--14.Find All Employees Except Marketing
+--Create a SQL query that finds the first and last names of all employees whose department ID is not 4.
+SELECT 
+	[FirstName]
+   ,[LastName]
+FROM [Employees]
+WHERE DepartmentID <> 4
