@@ -30,8 +30,3 @@ TOP 7
    ,[HireDate]
 FROM [Employees]
 ORDER BY [HireDate] DESC
-
-
-
-
-
