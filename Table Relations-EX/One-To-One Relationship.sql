@@ -40,3 +40,7 @@ ADD CONSTRAINT FK_Persons_Passports
 FOREIGN KEY (PassportId) 
 REFERENCES [Passports](PassportId)
 
+INSERT INTO [Persons] VALUES
+	('Roberto', 43300.00, 102),
+	('Tom', 56100.00, 103),
+	('Yana', 60200.00, 101)
