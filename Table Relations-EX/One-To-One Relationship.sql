@@ -21,3 +21,22 @@ INSERT INTO [Passports] VALUES
 	(102, 'K65LO4R7'),
 	(103, 'ZE657QP2')
 
+-- Table Persons
+
+CREATE TABLE [Persons]
+(
+	[PersonId] INT IDENTITY,
+	[FirstName] NVARCHAR(50) NOT NULL,
+	[Salary] DECIMAL(7, 2) NOT NULL,
+	[PassportID] INT NOT NULL
+)
+
+ALTER TABLE [Persons]
+ADD CONSTRAINT PK_PersonId
+PRIMARY KEY (PersonId)
+
+ALTER TABLE [Persons]
+ADD CONSTRAINT FK_Persons_Passports
+FOREIGN KEY (PassportId) 
+REFERENCES [Passports](PassportId)
+
