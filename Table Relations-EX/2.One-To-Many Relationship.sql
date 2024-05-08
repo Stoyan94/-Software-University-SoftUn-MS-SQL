@@ -26,3 +26,6 @@ INSERT INTO [Models]
    ,('Model X', 2)
    ,('Model 3', 2)
    ,('Nova', 3)
+
+
+SELECT * FROM [Models]
