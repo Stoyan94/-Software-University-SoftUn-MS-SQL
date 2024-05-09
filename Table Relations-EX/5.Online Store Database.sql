@@ -20,7 +20,7 @@ CREATE TABLE [Cities](
 CREATE TABLE [Customers](
 	[CustomerID] INT PRIMARY KEY IDENTITY
    ,[Name] VARCHAR(50) NOT NULL
-   ,[Birthday] DATE NOT NULL
+   ,[Birthday] DATETIME2 NOT NULL
    ,[CityID] INT FOREIGN KEY REFERENCES [Cities]([CityID]) NOT NULL
 )
 
@@ -30,7 +30,10 @@ CREATE TABLE [Orders](
    ,[CustomerID] INT FOREIGN KEY REFERENCES [Customers]([CustomerID]) NOT NULL
 )
 
+
 CREATE TABLE [OrderItems](
 	[OrderID] INT FOREIGN KEY REFERENCES [Orders]([OrderID]) NOT NULL
    ,[ItemID] INT FOREIGN KEY REFERENCES [Items]([ItemID]) NOT NULL
+
+   CONSTRAINT PK_OrderItems PRIMARY KEY(OrderID,ItemID)
 )
