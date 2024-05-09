@@ -37,3 +37,10 @@ CREATE TABLE [OrderItems](
 
    CONSTRAINT PK_OrderItems PRIMARY KEY(OrderID,ItemID)
 )
+
+-- CONSTRAINT PK_OrderItems PRIMARY KEY(OrderID,ItemID): This line defines a primary key constraint for the table. 
+	-- It specifies that the combination of "OrderID" and "ItemID" together forms the primary key for the "OrderItems" table. 
+	--This means that each combination of "OrderID" and "ItemID" must be unique within the table.
+-- In summary, this code creates a table to represent the relationship between orders and items, 
+	-- where each record links an order to an item through their respective IDs. 
+	--The combination of order ID and item ID serves as the primary key for this table.
