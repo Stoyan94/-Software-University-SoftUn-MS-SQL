@@ -24,3 +24,11 @@ CREATE TABLE [Agenda](
 	[StudentID] INT FOREIGN KEY REFERENCES [Students]([StudentID]) NOT NULL
    ,[SubjectID] INT FOREIGN KEY REFERENCES [Subjects]([SubjectID]) NOT NULL
 )
+
+-- Payments
+CREATE TABLE [Payments](
+	[PaymentID] INT FOREIGN KEY REFERENCES [Students]([StudentID]) NOT NULL
+   ,[PaymentDate] DATETIME2 NOT NULL
+   ,[PaymentAmount] DECIMAL (8, 2) NOT NULL
+   ,[StudentID] INT PRIMARY KEY
+)
