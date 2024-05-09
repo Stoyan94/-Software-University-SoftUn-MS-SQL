@@ -14,7 +14,7 @@ CREATE TABLE [Subjects](
 -- Students
 CREATE TABLE [Students](
 	[StudentID] INT PRIMARY KEY IDENTITY
-   ,[StudentNumber] INT NOT NULL
+   ,[StudentNumber] VARCHAR(30) NOT NULL
    ,[StudentName] VARCHAR(50) NOT NULL
    ,[MajorID] INT FOREIGN KEY REFERENCES [Majors]([MajorID]) NOT NULL
 )
@@ -23,12 +23,13 @@ CREATE TABLE [Students](
 CREATE TABLE [Agenda](
 	[StudentID] INT FOREIGN KEY REFERENCES [Students]([StudentID]) NOT NULL
    ,[SubjectID] INT FOREIGN KEY REFERENCES [Subjects]([SubjectID]) NOT NULL
+   ,PRIMARY KEY ([StudentID], [SubjectID])
 )
 
 -- Payments
 CREATE TABLE [Payments](
-	[PaymentID] INT FOREIGN KEY REFERENCES [Students]([StudentID]) NOT NULL
+	[PaymentID] INT PRIMARY KEY IDENTITY -- In real exmaple we would use GUID for better security!!!
    ,[PaymentDate] DATETIME2 NOT NULL
    ,[PaymentAmount] DECIMAL (8, 2) NOT NULL
-   ,[StudentID] INT PRIMARY KEY
+   ,[StudentID] INT FOREIGN KEY REFERENCES [Students]([StudentID]) NOT NULL
 )
