@@ -34,3 +34,11 @@ SELECT DepartmentID,
 FROM Employees
 GROUP BY DepartmentID
 
+
+-- Order by number of employees in descending order
+SELECT DepartmentID,
+	   COUNT(*) 
+FROM Employees
+GROUP BY DepartmentID
+ORDER BY COUNT(*) DESC
+
