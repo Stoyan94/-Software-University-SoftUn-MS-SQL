@@ -29,16 +29,17 @@ GROUP BY DepartmentID
 
 --So, this query returns a result set with two columns: "DepartmentID" and the count of how many rows belong to each department. 
 	--Each row in the result set represents a unique "DepartmentID" along with its corresponding count.
-SELECT DepartmentID,
+SELECT 
+	   DepartmentID,
 	   COUNT(*) 
 FROM Employees
 GROUP BY DepartmentID
 
 
 -- Order by number of employees in descending order
-SELECT DepartmentID,
+SELECT 
+	   DepartmentID,
 	   COUNT(*) 
 FROM Employees
 GROUP BY DepartmentID
 ORDER BY COUNT(*) DESC
-
