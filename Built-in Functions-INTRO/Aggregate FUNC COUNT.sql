@@ -17,7 +17,10 @@ WHERE DepartmentID = 7
 
 -- This clause groups the rows based on the values in the "DepartmentID" column. Essentially, 
 	--it divides the rows into groups where each group contains rows with the same "DepartmentID".
-SELECT COUNT(*) FROM Employees GROUP BY DepartmentID
+SELECT 
+COUNT(*) 
+FROM Employees 
+GROUP BY DepartmentID
 
 
 
@@ -26,5 +29,8 @@ SELECT COUNT(*) FROM Employees GROUP BY DepartmentID
 
 --So, this query returns a result set with two columns: "DepartmentID" and the count of how many rows belong to each department. 
 	--Each row in the result set represents a unique "DepartmentID" along with its corresponding count.
-SELECT DepartmentID,COUNT(*) FROM Employees GROUP BY DepartmentID
+SELECT DepartmentID,
+	   COUNT(*) 
+FROM Employees
+GROUP BY DepartmentID
 
