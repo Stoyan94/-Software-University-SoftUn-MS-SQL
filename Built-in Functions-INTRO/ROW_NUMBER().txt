@@ -1,0 +1,4 @@
+Row Number func- работи единствено върху подредени поредици
+пример за изписване ROW_NUMBER() OVER (ORDER BY Salary DESC) добра практика е да даваме и имена на функциите - 'AS Id' в даденият случай
+
+ROW_NUMBER(): This function assigns a unique sequential integer to each row within a result set partition, without considering ties. Unlike RANK() and DENSE_RANK(), ROW_NUMBER() does not assign the same rank to rows with identical values. Each row gets a distinct rank value.
