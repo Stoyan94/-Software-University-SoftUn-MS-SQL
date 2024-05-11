@@ -4,7 +4,7 @@ SELECT
 	,[LastName]
 	,DENSE_RANK() OVER (ORDER BY Salary DESC) AS [DensRank]
 	,RANK() OVER (ORDER BY Salary DESC) AS [Rank]
-	,NTILE(5) OVER (ORDER BY Salary DESC) AS FiveTile
+	,NTILE(5) OVER (ORDER BY Salary DESC) AS Quintile
 FROM [Employees] WHERE DepartmentID = 5 
 
 
