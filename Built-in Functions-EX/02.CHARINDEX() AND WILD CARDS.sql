@@ -1,4 +1,6 @@
 
+--2.Find Names of All Employees by Last Name 
+
 -- When CHARINDEX('ei', [LastName]) returns a value greater than 0, 
 	-- it indicates that the substring 'ei' was found within the last name. 
 	--	So, the condition > 0 ensures that only those records where 'ei' is found will be selected.
