@@ -1,0 +1,5 @@
+Когато ползваме вложение заявки не може да използваме ORDER BY във вложената заявка.
+Най-често ни се налага да изпозваме вложение заявки, ако искаме да използваме нещо от SELECT или друга клауза която се изпълнява слес WHERE 
+
+When we use nested queries, we cannot use ORDER BY in the nested query.
+Most often we need to use nested queries if we want to use something from SELECT or another clause that is executed before WHERE

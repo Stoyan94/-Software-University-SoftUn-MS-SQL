@@ -1,0 +1,15 @@
+In Microsoft SQL Server, the RANK functions are used to assign a rank to each row within a result set based on the values of a specified column or columns. There are three main RANK functions available: RANK(), DENSE_RANK(), and ROW_NUMBER().
+
+RANK(): This function assigns a unique rank to each distinct row within the partition of a result set. If there are ties (i.e., rows with the same values), the ranks are assigned sequentially without leaving gaps. However, the ranks of the tied rows are not necessarily consecutive; there might be gaps between ranks.
+
+DENSE_RANK(): Similar to the RANK() function, DENSE_RANK() assigns ranks to each row within a result set partition. However, unlike RANK(), it does not leave gaps in the ranking sequence even if there are ties. This means that the ranks assigned by DENSE_RANK() are always consecutive integers without any gaps.
+
+
+These functions are typically used in SELECT queries with the OVER() clause, which allows you to define partitions within your result set. The syntax generally looks like this:
+
+SELECT
+    column1,
+    column2,
+    RANK() OVER (PARTITION BY partition_column ORDER BY order_column) AS rank_column
+FROM
+    your_table;
