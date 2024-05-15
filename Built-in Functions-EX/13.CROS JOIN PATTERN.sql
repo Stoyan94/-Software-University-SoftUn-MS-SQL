@@ -1,7 +1,10 @@
-SELECT [r].[RiverName],
-	   [p].[PeakName]
+SELECT [p].[PeakName],
+	   [r].[RiverName],
+	   LOWER(CONCAT(SUBSTRING([p].[PeakName], 1, LEN([p].[PeakName]) -1 ), [r].[RiverName]))
+	   AS Mix
 FROM [Peaks]
   AS [p],
      [Rivers]
   AS [r]
-WHERE SUBSTRING(r.RiverName, 1, 1) = SUBSTRING(p.PeakName, 1, 1)
+WHERE RIGHT(LOWER(r.RiverName), 1) = LEFT(LOWER(p.PeakName), 1)
+ORDER BY Mix
