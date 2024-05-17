@@ -8,7 +8,7 @@
 SELECT [Name]
 	AS [Game],
 	   CASE 
-		  WHEN DATEPART(HOUR, [Start]) >= 0 AND DATEPART(HOUR, [Start]) < 12 THEN 'Moning'
+		  WHEN DATEPART(HOUR, [Start]) >= 0 AND DATEPART(HOUR, [Start]) < 12 THEN 'Morning'
 		  WHEN DATEPART(HOUR, [Start]) >= 12 AND DATEPART(HOUR, [Start]) < 18 THEN 'Afternoon'
 		  ELSE 'Evening'
 		  END		
@@ -21,5 +21,7 @@ SELECT [Name]
 			END
 			AS [Duration]
 FROM [Games]
+	AS [g]
 ORDER BY [Game],
-		 [Duration]
+		 [Duration],
+		 [Part of the Day]
