@@ -3,3 +3,11 @@ Performance: Joining on non-key columns or arbitrary conditions can lead to larg
 Data Integrity: Ensuring joins are made on correct logical relationships or foreign keys helps maintain data integrity and produce meaningful results.
 Debugging: Mistakes in join conditions can be hard to debug, leading to unexpected and incorrect query results.
 In summary, joining tables without using foreign keys is possible, but it should be done with an understanding of the data and the logical relationship between columns to ensure meaningful and efficient results.
+
+
+
+Винаги, когато искаме да се съединим таблици първо търсим дали имат външни ключове, зада извършваме съединението по тях , защото гарантира консистентност на информацията- гарантира верноста на информацията която търсим.
+	 ^	
+	 | -- translation
+Whenever we want to join tables, we first look to see if they have foreign keys, then we perform the join on them, because it guarantees the consistency of the information - it guarantees the accuracy of the information we are looking for. 
+              
