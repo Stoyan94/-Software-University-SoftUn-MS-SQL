@@ -1,0 +1,3 @@
+Когато ползваме GROUP BY можем да ползваме в SELECT само колоната която ползваме в GROUP BY, но ако искаме да ползваме и други колони в SELECT- ЕДИНСТВЕНО С АГРЕГИРАЩАТА ФУНКЦИЯ можем да ползваме други колони в SELECT
+
+When we use GROUP BY, we can use in SELECT only the column we use in GROUP BY, but if we want to use other columns in SELECT - ONLY WITH THE AGGREGATE FUNCTION, we can use other columns in SELECT
