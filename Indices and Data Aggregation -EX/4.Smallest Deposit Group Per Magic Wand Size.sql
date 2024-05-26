@@ -1,4 +1,4 @@
-
+-- Hard Solve
 SELECT DepositGroup
 FROM 
 	( 
@@ -14,7 +14,7 @@ FROM
 	ORDER BY DepositGroup
 
 
-
+-- Easy Solve
 SELECT TOP 2 
 	 DepositGroup
 FROM WizzardDeposits
