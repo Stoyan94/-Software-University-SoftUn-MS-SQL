@@ -4,7 +4,9 @@ AS
 BEGIN
 	DECLARE @result INT
 	IF(@End IS NULL )
+	BEGIN
 		SET @End = GETDATE()
+	END
 	SET @result = DATEDIFF(WEEK, @Start, @End)
 	RETURN @Result
 END
