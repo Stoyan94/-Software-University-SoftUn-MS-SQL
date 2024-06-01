@@ -1,12 +1,14 @@
+
+				--Function name          Set parameters
 CREATE FUNCTION udf_ProjectLenghtInWeeks(@Start DATETIME, @End DATETIME)
-RETURNS INT
+RETURNS INT -- Return Type
 AS
 BEGIN
-	DECLARE @result INT
-	IF(@End IS NULL )
+	DECLARE @result INT --Set Variable
+	IF(@End IS NULL ) -- If statement
 	BEGIN
 		SET @End = GETDATE()
 	END
 	SET @result = DATEDIFF(WEEK, @Start, @End)
-	RETURN @Result
+	RETURN @result -- Return value
 END
