@@ -1,10 +1,10 @@
-CREATE PROC usp_GetTownsStartingWith @startWith VARCHAR = 'b'
+CREATE OR ALTER PROC usp_GetTownsStartingWith @startWith VARCHAR(50)
 AS
 	BEGIN
-		SELECT [Name]
+		SELECT [Name] AS [Towns]
 		FROM Towns
-		WHERE LOWER(SUBSTRING([Name], 1, 1)) = 'b'
+		WHERE SUBSTRING([Name], 1, LEN(@startWith)) = @startWith
 	END
 
 
-EXEC usp_GetTownsStartingWith
+EXEC usp_GetTownsStartingWith b
