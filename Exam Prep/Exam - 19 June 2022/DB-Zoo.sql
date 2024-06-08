@@ -1,0 +1,15 @@
+GO
+CREATE DATABASE Zoo
+
+Use Zoo
+
+GO
+
+CREATE TABLE Owners
+(
+	Id INT PRIMARY KEY IDENTITY,
+	[Name] VARCHAR (50) NOT NULL,
+	PhoneNumber VARCHAR (15) NOT NULL,
+	[Address] VARCHAR (50)
+)
+
