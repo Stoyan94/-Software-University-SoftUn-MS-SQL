@@ -1,0 +1,57 @@
+GO
+
+CREATE DATABASE [Tourist Agency]
+
+USE [Tourist Agency]
+
+GO
+
+CREATE TABLE Countries 
+(
+	Id INT PRIMARY KEY IDENTITY,
+	[Name] VARCHAR (50) NOT NULL
+)
+
+
+CREATE TABLE Destinations
+(
+	Id INT PRIMARY KEY IDENTITY,
+	[Name] VARCHAR (50) NOT NULL,
+	CountryId INT FOREIGN KEY REFERENCES Countries (Id)
+)
+
+CREATE TABLE Rooms
+(
+	Id INT PRIMARY KEY IDENTITY,
+	[Type] VARCHAR (40) NOT NULL,
+	Price DECIMAL (18,2) NOT NULL,
+	BedCount INT CHECK (BedCount > 0 AND BedCount <= 10) NOT NULL
+)
+
+CREATE TABLE Hotels
+(
+	Id INT PRIMARY KEY IDENTITY,
+	[Name] VARCHAR (50) NOT NULL,
+	DestinationId INT FOREIGN KEY REFERENCES Destinations (Id) NOT NULL
+)
+
+CREATE TABLE Tourists
+(
+	Id INT PRIMARY KEY IDENTITY,
+	[Name] VARCHAR (80) NOT NULL,
+	PhoneNumber VARCHAR (20) NOT NULL,
+	Email VARCHAR (80),
+	CountryId INT FOREIGN KEY REFERENCES Countries (Id)
+)
+
+CREATE TABLE Bookings 
+(
+	Id INT PRIMARY KEY IDENTITY,
+	ArrivalDate DATETIME2 NOT NULL,
+	DepartureDate DATETIME2 NOT NULL,
+	AdultsCount INT CHECK (AdultsCount > 0 AND AdultsCount <= 10) NOT NULL,
+	ChildrenCount INT CHECK (ChildrenCount > 0 AND ChildrenCount <= 9) NOT NULL,
+	TouristId INT FOREIGN KEY REFERENCES Tourists (Id),
+	HotelId INT FOREIGN KEY REFERENCES Hotels (Id),
+	RoomId INT FOREIGN KEY REFERENCES Rooms (Id)
+)
