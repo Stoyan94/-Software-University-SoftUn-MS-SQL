@@ -55,3 +55,12 @@ CREATE TABLE Bookings
 	HotelId INT FOREIGN KEY REFERENCES Hotels (Id),
 	RoomId INT FOREIGN KEY REFERENCES Rooms (Id)
 )
+
+CREATE TABLE HotelsRooms
+(
+    HotelId INT NOT NULL,
+    RoomId INT NOT NULL,
+    PRIMARY KEY (HotelId, RoomId),
+    FOREIGN KEY (HotelId) REFERENCES Hotels(Id),
+    FOREIGN KEY (RoomId) REFERENCES Rooms(Id)
+);
