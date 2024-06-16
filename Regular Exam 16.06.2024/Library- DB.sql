@@ -1,8 +1,8 @@
 GO
 
-CREATE DATABASE [Library]
+CREATE DATABASE [LibraryDb]
 
-USE [Library]
+USE [LibraryDb]
 
 GO
 
