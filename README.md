@@ -1,2 +1,2 @@
 # -Software-University-SoftUni-MS-SQL
-![SQL](https://github.com/Stoyan94/-Software-University-SoftUnI-MS-SQL/assets/122618231/58e1af76-7929-45d3-82f8-d30545caafa9)
+![MS SQL - May 2024 - Certificate](https://github.com/Stoyan94/-Software-University-SoftUnI-MS-SQL/assets/122618231/1df9be63-2e3d-4ff2-b712-e36311767f01)
